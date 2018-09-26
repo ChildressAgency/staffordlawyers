@@ -155,6 +155,36 @@ img.alignleft{
   bottom:0;
 }
 
+.hero{
+  height:360px;
+  position:relative;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.hero .hero-caption{
+  position:absolute;
+  margin-top:0;
+  margin-bottom:0;
+  text-align:center;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:"Open Sans", sans-serif;
+  font-size:34px;
+  font-weight:700;
+  color:#fff;
+  z-index:2;
+}
+.hero .hero-overlay{
+  position:absolute;
+  z-index:1;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  background-color:rgba(0,0,0,.6);
+}
+
 #main{
   padding-top:40px;
   padding-bottom:40px;
@@ -199,11 +229,25 @@ h2.underlined-header:before{
 #main .brief{
   margin-top:40px;
 }
-.brief>p{
+.brief{
+  max-width:780px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.2em;
+}
+.brief h3{
+  font-family:"Open Sans", sans-serif;
+  font-size:24px;
+  font-weight:600;
+}
+.brief.narrow-brief{
   max-width:420px;
+  margin-left:0;
+}
+.brief>p~p:first-letter,
+.brief p:only-of-type:first-letter{
   font-family:"EB Garamond", serif;
   font-size:18px;
-  line-height:1.2em;
 }
 .brief>p>strong{
   font-family:"Open Sans", sans-serif;
@@ -320,6 +364,35 @@ h2.underlined-header:before{
   font-weight:600;
 }
 
+#attorneys{
+  margin-top:40px;
+}
+#associates{
+  margin-top:80px;
+}
+#attorneys h2,
+#associates h2{
+  font-family:"Open Sans", sans-serif;
+  font-size:24px;
+  color:#335380;
+  margin-top:0;
+  margin-bottom:0;
+  font-weight:600;
+}
+.attorney{
+  margin-top:40px;
+  font-family:"Open Sans", sans-serif;
+}
+.attorney h3{
+  font-size:26px;
+  color:#335380;
+  margin-top:0;
+  margin-bottom:0;
+}
+.attorney p{
+  font-size:20px;
+}
+
 #footer{
   background-color:#253a57;
   padding-top:40px;
@@ -353,7 +426,14 @@ h2.underlined-header:before{
 
 
 @media (max-width:768px){
-
+  .attorney{
+    text-align:center;
+  }
+  .attorney img{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:10px;
+  }
 }
 @media (max-width:991px){
   #header-nav{
