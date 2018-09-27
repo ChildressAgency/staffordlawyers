@@ -105,124 +105,126 @@
 
       <section id="contact-form">
         <h2>Contact Us</h2>
-        <div class="form-group">
-          <label for="your-name" class="control-label">Name*</label>
-          <div class="row">
-            <div class="col-sm-6">
-              <input type="text" id="fname" class="form-control" aria-describedby="first-name" />
-              <span id="first-name" class="help-block">First</span>
-            </div>
-            <div class="col-sm-6">
-              <input type="text" id="lname" class="form-control" aria-describedby="last-name" />
-              <span id="last-name" class="help-block">Last</span>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="address" class="control-label">Address</label>
-          <input type="text" id="address1" class="form-control" aria-describedby="address-1" />
-          <span id="address-1" class="help-block">Line 1</span>
-        </div>
-        <div class="form-group">
-          <input type="text" id="address2" class="form-control" aria-describedby="address-2" />
-          <span id="address-2" class="help-block">Line 2</span>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-sm-4">
-              <label for="city" class="control-label">City</label>
-              <input type="text" id="city" class="form-control" />
-            </div>
-            <div class="col-sm-2">
-              <label for="state" class="control-label">State</label>
-              <input type="text" id="state" class="form-control" />
-            </div>
-            <div class="col-sm-3">
-              <label for="zip" class="control-label">Zip</label>
-              <input type="text" id="zip" class="form-control" />
-            </div>
-          </div> 
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-sm-4">
-              <label for="phone" class="control-label">Phone*</label>
-              <input type="tel" id="phone" class="form-control" />
-            </div>
-            <div class="col-sm-4">
-              <label for="fax" class="control-label">Fax</label>
-              <input type="text" id="fax" class="form-control" />
+        <form>
+          <div class="form-group">
+            <label for="your-name" class="control-label">Name*</label>
+            <div class="row">
+              <div class="col-sm-6">
+                <input type="text" id="fname" class="form-control" aria-describedby="first-name" />
+                <span id="first-name" class="help-block">First</span>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" id="lname" class="form-control" aria-describedby="last-name" />
+                <span id="last-name" class="help-block">Last</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="your-email" class="control-label">Email*</label>
-          <input type="email" id="your-email" class="form-control" />
-        </div>
-        <div class="form-group">
-          <label for="type-of-case" class="control-label">What type fo case do you have? <span>(Optional)</span></label>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Separation / Marital Settlement Agreement" />
-              Separation / Marital Settlement Agreement
-            </label>
+          <div class="form-group">
+            <label for="address" class="control-label">Address</label>
+            <input type="text" id="address1" class="form-control" aria-describedby="address-1" />
+            <span id="address-1" class="help-block">Line 1</span>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Child Support" />
-              Child Support
-            </label>
+          <div class="form-group">
+            <input type="text" id="address2" class="form-control" aria-describedby="address-2" />
+            <span id="address-2" class="help-block">Line 2</span>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Spousal Support" />
-              Spousal Support
-            </label>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-4">
+                <label for="city" class="control-label">City</label>
+                <input type="text" id="city" class="form-control" />
+              </div>
+              <div class="col-sm-2">
+                <label for="state" class="control-label">State</label>
+                <input type="text" id="state" class="form-control" />
+              </div>
+              <div class="col-sm-3">
+                <label for="zip" class="control-label">Zip</label>
+                <input type="text" id="zip" class="form-control" />
+              </div>
+            </div> 
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Divorce" />
-              Divorce
-            </label>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-4">
+                <label for="phone" class="control-label">Phone*</label>
+                <input type="tel" id="phone" class="form-control" />
+              </div>
+              <div class="col-sm-4">
+                <label for="fax" class="control-label">Fax</label>
+                <input type="text" id="fax" class="form-control" />
+              </div>
+            </div>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Military Divorce" />
-              Military Divorce
-            </label>
+          <div class="form-group">
+            <label for="your-email" class="control-label">Email*</label>
+            <input type="email" id="your-email" class="form-control" />
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Equitable Distribution" />
-              Equitable Distribution
-            </label>
+          <div class="form-group">
+            <label for="type-of-case" class="control-label">What type fo case do you have? <span>(Optional)</span></label>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Separation / Marital Settlement Agreement" />
+                Separation / Marital Settlement Agreement
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Child Support" />
+                Child Support
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Spousal Support" />
+                Spousal Support
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Divorce" />
+                Divorce
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Military Divorce" />
+                Military Divorce
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Equitable Distribution" />
+                Equitable Distribution
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Child Custody / Visitation" />
+                Child Custody / Visitation
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="Domestic Violence / Allegation of Abuse" />
+                Domestic Violence / Allegation of Abuse
+              </label>
+            </div>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Child Custody / Visitation" />
-              Child Custody / Visitation
-            </label>
+          <div class="form-group">
+            <label for="disclaimer" class="control-label">Disclaimer*</label>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="I have read and agree to the disclaimer" />
+                I have read and agree to the disclaimer
+              </label>
+              <p><a href="#" target="_blank">Click here</a> to view the disclaimer</p>
+            </div>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="Domestic Violence / Allegation of Abuse" />
-              Domestic Violence / Allegation of Abuse
-            </label>
+          <div class="form-group">
+            <input type="submit" class="btn-main" value="Submit" />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="disclaimer" class="control-label">Disclaimer*</label>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="I have read and agree to the disclaimer" />
-              I have read and agree to the disclaimer
-            </label>
-            <p><a href="#" target="_blank">Click here</a> to view the disclaimer</p>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="submit" class="btn-main" value="Submit" />
-        </div>
+        </form>
       </section>
     </div>
   </main>
