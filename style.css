@@ -494,6 +494,11 @@ table.attorney-contact-info td{
   font-weight:700;
 }
 
+#google-map{
+  margin-top:40px;
+  margin-bottom:40px;
+}
+
 #footer{
   background-color:#253a57;
   padding-top:40px;
