@@ -456,6 +456,44 @@ table.attorney-contact-info td{
   font-style:normal;
 }
 
+#intro-search{
+  max-width:780px;
+  margin:25px auto 40px;
+}
+
+.blog-post{
+  margin-top:40px;
+}
+.post-header h2{
+  font-family:"Open Sans", sans-serif;
+  font-size:24px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+.post-header p{
+  color:#707070;
+  font-size:20px;
+}
+.post-footer{
+  margin-top:25px;
+}
+.post-footer .tag-list{
+  color:#707070;
+}
+.share>p{
+  display:inline-block;
+  color:#707070;
+  font-weight:700;
+}
+#comments{
+  margin-top:40px;
+  margin-bottom:40px;
+}
+#comments .comments-closed{
+  color:#707070;
+  font-weight:700;
+}
+
 #footer{
   background-color:#253a57;
   padding-top:40px;
@@ -474,7 +512,8 @@ table.attorney-contact-info td{
   font-size:14px;
   margin-top:20px;
 }
-.social>a{
+.social>a,
+.share>a{
   padding:0 8px;
 }
 .social .fab{
@@ -482,8 +521,16 @@ table.attorney-contact-info td{
   color:#fff;
   transition:all .3s ease;
 }
+.share .fab{
+  font-size:26px;
+  color:#000;
+  transition:all .3s ease;
+  vertical-align:top;
+}
 .social .fab:hover,
-.social .fab:focus{
+.social .fab:focus,
+.share .fab:hover,
+.share .fab:focus{
   color:#398add;
 }
 
