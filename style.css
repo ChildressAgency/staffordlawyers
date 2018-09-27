@@ -393,6 +393,66 @@ h2.underlined-header:before{
   font-size:20px;
 }
 
+.attorney-profile h2{
+  font-family:"Open Sans", sans-serif;
+  font-size:30px;
+  font-weight:700;
+  color:#335380;
+  margin-top:0;
+}
+table.attorney-contact-info{
+  width:100%;
+  margin-top:15px;
+}
+table.attorney-contact-info th{
+  width:75px;
+}
+table.attorney-contact-info th,
+table.attorney-contact-info td{
+  padding-bottom:15px;
+  vertical-align:top;
+  text-align:left;
+}
+.attorney-profile .col-sm-7 h3:first-child{
+  margin-top:0;
+}
+.attorney-profile h3{
+  font-family:"Open Sans", sans-serif;
+  font-size:26px;
+  font-weight:700;
+  color:#707070;
+  margin-bottom:5px;
+}
+.attorney-profile ul{
+  padding-left:0;
+  list-style:none;
+}
+
+#client-reviews{
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+#client-reviews h2{
+  font-family:"Open Sans", sans-serif;
+  font-size:30px;
+  font-weight:700;
+  color:#fff;
+  margin-top:0;
+}
+.client-review{
+  margin-top:25px;
+  background-color:rgba(255,255,255,.8);
+  border-radius:8px;
+  padding:80px;
+}
+.client-review cite{
+  display:block;
+  text-align:right;
+  font-style:normal;
+}
+
 #footer{
   background-color:#253a57;
   padding-top:40px;
@@ -433,6 +493,9 @@ h2.underlined-header:before{
     margin-left:auto;
     margin-right:auto;
     margin-bottom:10px;
+  }
+  .client-review{
+    padding:15px;
   }
 }
 @media (max-width:991px){
