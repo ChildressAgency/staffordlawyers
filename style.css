@@ -593,27 +593,27 @@ table.attorney-contact-info td{
   color:#707070;
   text-decoration:none;
 }
-.faq-section .panel{
+.panel{
   border:none;
   box-shadow:none;
 }
-.faq-section .panel-default>.panel-heading{
+.panel-default>.panel-heading{
   background-color:transparent;
 }
-.faq-section .panel-title{
+.panel-title{
   font-family:"Open Sans", sans-serif;
   font-size:20px;
   font-weight:600;
 }
-.faq-section .panel-title>a{
+.panel-title>a{
   position:relative;
 }
-.faq-section .panel-title>a>span{
+.panel-title>a>span{
   display:block;
   margin-left:33px;
 }
 
-.faq-section .panel-title>a::before{
+.panel-title>a::before{
   content:"\f068";
   font-family:"Font Awesome 5 Free";
   border:3px solid #87909d;
@@ -623,15 +623,15 @@ table.attorney-contact-info td{
   color:#87909d;
   position:absolute;
 }
-.faq-section .panel-title>a.collapsed::before{
+.panel-title>a.collapsed::before{
   content:"\f067";
 }
 
-.faq-section .panel-title>a:hover,
-.faq-section .panel-title>a:focus{
+.panel-title>a:hover,
+.panel-title>a:focus{
   text-decoration:none;
 }
-.faq-section .panel-title>a::after{
+.panel-title>a::after{
   content:"";
   position:absolute;
   width:165px;
@@ -640,8 +640,14 @@ table.attorney-contact-info td{
   left:-3px;
   bottom:-9px;
 }
-.faq-section .panel-group .panel-heading + .panel-collapse>.panel-body{
+.panel-group .panel-heading + .panel-collapse>.panel-body{
   border-top:none;
+}
+
+#library .panel-title{
+  font-size:26px;
+  color:#707070;
+  font-weight:700;
 }
 
 #request-appointment{
@@ -655,6 +661,51 @@ table.attorney-contact-info td{
   margin-top:0;
   margin-bottom:20px;
 }
+
+#library .collapse.in{
+  max-height:100%;
+  /*visibility:visible;*/
+  overflow:visible;
+}
+#library .collapse{
+  max-height:0;
+  display:block;
+  /*visibility:hidden;*/
+  overflow:hidden;
+}
+.slider-panel{
+  max-width:80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.slider-panel .slick-arrow{
+  position:absolute;
+  top:50%;
+  margin-top:-30px;
+  font-size:52px;
+  color:#aaa;
+  cursor:pointer;
+}
+.slider-panel .slick-arrow:hover{
+  color:#000;
+}
+.slider-panel .slick-arrow.slick-disabled{
+  color:#ddd;
+}
+.slider-panel .slick-arrow.slick-disabled:hover{
+  color:#ddd;
+  cursor:not-allowed;
+}
+.slider-panel .slick-arrow.fa-angle-left{
+  left:-50px;
+}
+.slider-panel .slick-arrow.fa-angle-right{
+  right:-50px;
+}
+.slick-slide{
+  padding:0 15px;
+}
+
 
 #footer{
   background-color:#253a57;
@@ -708,6 +759,12 @@ table.attorney-contact-info td{
   }
   .client-review{
     padding:15px;
+  }
+  .slider-panel{
+    max-width:100%;
+  }
+  .slider-panel .slick-arrow{
+    display:none;
   }
 }
 @media (max-width:991px){
