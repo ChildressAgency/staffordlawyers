@@ -499,10 +499,10 @@ table.attorney-contact-info td{
   margin-bottom:40px;
 }
 
-.faq-section{
+.pic-accordion{
   margin-top:40px;
 }
-.faq-section-title{
+.pic-accordion-title{
   display:block;
   position:relative;
   height:230px;
@@ -510,12 +510,12 @@ table.attorney-contact-info td{
   background-size:cover;
   color:#fff;
 }
-.faq-section-title:hover,
-.faq-section-title:focus{
+.pic-accordion-title:hover,
+.pic-accordion-title:focus{
   color:#fff;
   text-decoration:none;
 }
-.faq-section-title .faq-title-overlay{
+.pic-accordion-title .pic-accordion-overlay{
   position:absolute;
   height:100%;
   width:100%;
@@ -525,15 +525,15 @@ table.attorney-contact-info td{
   z-index:1;
   transition:all .3s ease;
 }
-.faq-section-title.collapsed .faq-title-overlay{
+.pic-accordion-title.collapsed .pic-accordion-overlay{
   background-color:rgba(0,0,0,.6);
 }
 /*
-.faq-section-title:hover .faq-title-overlay{
+.pic-accordion-title:hover .pic-accordion-overlay{
   background-color:rgba(0,0,0,0);
 }
 */
-.faq-section-title>h2{
+.pic-accordion-title>h2{
   position:absolute;
   z-index:2;
   top:50%;
@@ -548,12 +548,12 @@ table.attorney-contact-info td{
   transition:all .3s ease;
   text-align:center;
 }
-.faq-section-title.collapsed>h2{
+.pic-accordion-title.collapsed>h2{
   opacity:1;
 }
 
 /*
-.faq-section-title:hover>h2{
+.pic-accordion-title:hover>h2{
   opacity:0;
 }*/
 .click-to-open{
@@ -570,10 +570,10 @@ table.attorney-contact-info td{
 .click-to-open>.fas{
   display:block;
 }
-.faq-section-title.collapsed:hover .click-to-open{
+.pic-accordion-title.collapsed:hover .click-to-open{
   opacity:1;
 }
-.faq-section-title-2{
+.pic-accordion-title-2{
   font-family:"Open Sans", sans-serif;
   font-size:26px;
   color:#707070;
@@ -583,13 +583,13 @@ table.attorney-contact-info td{
   margin-top:5px;
   margin-bottom:10px;
 }
-.faq-section-title-2::before{
+.pic-accordion-title-2::before{
   content:"\f00d";
   font-family:"Font Awesome 5 Free";
   font-size:23px;
 }
-.faq-section-title-2:hover,
-.faq-section-title-2:focus{
+.pic-accordion-title-2:hover,
+.pic-accordion-title-2:focus{
   color:#707070;
   text-decoration:none;
 }
@@ -704,6 +704,50 @@ table.attorney-contact-info td{
 }
 .slick-slide{
   padding:0 15px;
+}
+
+#ready-to-contact{
+  background-repeat:no-repeat;
+  background-size:cover;
+  position:relative;
+  height:680px;
+}
+#ready-to-contact>.overlay{
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  background-color:rgba(0,0,0,.6);
+  z-index:1;
+}
+.section-caption{
+  position:absolute;
+  z-index:2;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:100%;
+  max-width:625px;
+  padding-left:15px;
+  padding-right:15px;
+}
+.section-caption h3{
+  font-family:"Open Sans", sans-serif;
+  font-size:28px;
+  font-weight:600;
+  color:#fff;
+  margin-top:0;
+  margin-bottom:40px;
+}
+.section-caption p{
+  font-family:"Open Sans", sans-serif;
+  font-size:18px;
+  font-weight:600;
+  color:#fff;
+}
+.section-caption .btn-main{
+  margin-top:25px;
 }
 
 
