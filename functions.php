@@ -303,3 +303,20 @@ function staffordlawyers_header_fallback_menu(){ ?>
     </ul>
   </div>
 <?php }
+
+function staffordlawyers_footer_fallback_menu(){ ?>
+  <nav id="footer-nav">
+    <ul class="footer-menu list-unstyled">
+      <li><a href="<?php echo home_url(); ?>">Home</a></li>
+      <li><a href="<?php echo home_url('practice'); ?>">Practice</a></li>
+      <li><a href="<?php echo home_url('firm-profile'); ?>">Firm Profile</a></li>
+      <li><a href="<?php echo home_url('attorneys-staff'); ?>"">Attorneys & Staff</a></li>
+      <li><a href="<?php echo home_url('library'); ?>">Library</a></li>
+      <li><a href="<?php echo home_url('testimonials'); ?>">Testimonials</a></li>
+      <li><a href="<?php echo home_url('faqs'); ?>">FAQs</a></li>
+      <li><a href="<?php echo home_url('resources'); ?>">Resources</a></li>
+      <li><a href="<?php echo home_url('blog'); ?>">Blog</a></li>
+      <li><a href="<?php echo home_url('contact-us'); ?>">Contact Us</a></li>
+    </ul>
+  </nav>
+<?php }
