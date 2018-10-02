@@ -38,7 +38,7 @@
           </a>
         </div>
         <div class="col-sm-10">
-          <h1 class="brand-title">Rinehart, Butler, Hodge, Moss & Bryant P.L.C.<small>Attorneys At Law</small></h1>
+          <h1 class="brand-title"><?php the_field('company_name', 'option'); ?><small>Attorneys At Law</small></h1>
         </div>
       </div>
     </div>
