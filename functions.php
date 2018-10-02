@@ -75,6 +75,7 @@ function staffordlawyers_add_css_meta($link, $handle){
 }
 
 add_theme_support('post-thumbnails');
+add_theme_support('custom-logo');
 
 register_nav_menu( 'header-nav', 'Header Navigation' );
 register_nav_menu('footer-nav', 'Footer Navigation');
@@ -285,3 +286,20 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		}
 	}
 }
+
+function staffordlawyers_header_fallback_menu(){ ?>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav nav-justified">
+      <li <?php if(is_front_page()){ echo ' class="active"'; } ?>><a href="<?php echo home_url(); ?>">Home</a></li>
+      <li <?php if(is_page('practice')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('practice'); ?>">Practice</a></li>
+      <li <?Php if(is_page('firm-profile')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('firm-profile'); ?>">Firm Profile</a></li>
+      <li <?php if(is_page('attorneys-staff')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('attorneys-staff'); ?>">Attorneys & Staff</a></li>
+      <li <?php if(is_page('library')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('library'); ?>">Library</a></li>
+      <li <?php if(is_page('testimonials')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('testimonials'); ?>">Testimonials</a></li>
+      <li <?php if(is_page('faqs')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('faqs'); ?>">FAQs</a></li>
+      <li <?php if(is_page('resources')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('resources'); ?>">Resources</a></li>
+      <li <?php if(is_home()){ ' class="active"'; } ?>><a href="<?php echo home_url('blog'); ?>">Blog</a></li>
+      <li <?php if(is_page('contact-us')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('contact-us'); ?>">Contact Us</a></li>
+    </ul>
+  </div>
+<?php }
