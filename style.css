@@ -367,14 +367,10 @@ h2.underlined-header:before{
   font-weight:600;
 }
 
-#attorneys{
-  margin-top:40px;
-}
-#associates{
+.staff{
   margin-top:80px;
 }
-#attorneys h2,
-#associates h2{
+.staff h2{
   font-family:"Open Sans", sans-serif;
   font-size:24px;
   color:#335380;
