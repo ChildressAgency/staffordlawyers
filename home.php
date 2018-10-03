@@ -10,7 +10,7 @@
           }
         }
         else{
-          echo '<p>Sorry, there are currently no blog posts.</p>';
+          echo '<p>Sorry, there is nothing to display.</p>';
         }
       ???>
     </div>
