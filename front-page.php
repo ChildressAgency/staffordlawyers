@@ -3,9 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-7">
-          <div class="search-form">
-            <?php get_search_form(); ?>
-          </div>
+          <?php get_search_form(); ?>
 
           <?php if(get_field('first_section_title') || get_field('first_section_content')): ?>
             <article class="brief narrow-brief">
@@ -82,53 +80,20 @@
     </div>
   </section>
 
-  <section id="blog-posts">
-    <div class="container">
-      <h2>Blog Posts</h2>
-
-      <div class="row">
-        <div class="col-sm-5">
-          <img src="images/lawyer-family.jpg" class="img-responsive center-block" alt="" />
+  <?php
+    $recent_posts = new WP_Query(array('posts_per_page' => 3, 'post_status' => 'publish'));
+    if($recent_posts->have_posts()): ?>
+      <section id="blog-posts">
+        <div class="container">
+          <h2>Blog Posts</h2>
+          <?php
+            while($recent_posts->have_posts()): 
+              $recent_posts->the_post();
+              get_template_part('partials/post-summary', 'loop');
+            endwhile;
+          ?>
+          <a href="<?php echo home_url('blog'); ?>" class="view-more">View More Posts</a>
         </div>
-        <div class="col-sm-7">
-          <div class="post-summary">
-            <h3>Is child custody law in Virginia unfair to fathers?</h3>
-            <p class="post-meta">Posted on March 26, 2012 by <a href="#">Ken Hodge</a> in <a href="#">Blog</a></p>
-            <p class="post-excerpt">"In determining custody, the court shall give primary consideration to the best interests of the child. The court shall assure minor children of frequent and continuing contact with both parents, when appropriate, and encourage parents to share in the responsibilities of rearing...</p>
-            <a href="#" class="btn-main">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-5">
-          <img src="images/hands-folded-meeting.jpg" class="img-responsive center-block" alt="" />
-        </div>
-        <div class="col-sm-7">
-          <div class="post-summary">
-            <h3>"Separate property" in divorce may become marital</h3>
-            <p class="post-meta">Posted on March 26, 2012 by <a href="#">Ken Hodge</a> in <a href="#">Blog</a></p>
-            <p class="post-excerpt">Ken Hodge recently wrote an article outlining how separate property, i.e., property owned by one spouse prior to the marriage, can be treated by the Court as marital property to the extent that it increased in value during the marriage. This is an aspect of Virginia divorce law that...</p>
-            <a href="#" class="btn-main">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-5">
-          <img src="images/family.jpg" class="img-responsive center-block" alt="" />
-        </div>
-        <div class="col-sm-7">
-          <div class="post-summary">
-            <h3>Benefits of settling child custody cases outside of court</h3>
-            <p class="post-meta">Posted on May 5, 2010 by <a href="#">Ken Hodge</a> in <a href="#">Blog</a></p>
-            <p class="post-excerpt">Some people think it strange to hear an attorney talk about the benefits of staying out of court. But in child custody and visitation caes, it is absolutely essential that the client consider the risks and costs associated with litigation, and also the possible benefits of resolving...</p>
-            <a href="#" class="btn-main">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <a href="#" class="view-more">View More Posts</a>
-    </div>
-  </section>
+      </section>
+  <?php endif; wp_reset_postdata(); ?>
 <?php get_footer(); ?>
