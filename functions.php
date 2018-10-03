@@ -320,3 +320,59 @@ function staffordlawyers_footer_fallback_menu(){ ?>
     </ul>
   </nav>
 <?php }
+
+add_action('init', 'staffordlawyers_create_post_types');
+function staffordlawyers_create_post_types(){
+  $staff_labels = array(
+    'name' => 'Staff',
+    'singular_name' => 'Staff',
+    'menu_name' => 'Staff',
+    'add_new_item' => 'Add New Staff Member',
+    'search_items' => 'Search Staff',
+    'edit_item' => 'Edit Staff Member',
+    'view_item' => 'View Staff Member',
+    'all_items' => 'All Staff',
+    'new_item' => 'New Staff Member',
+    'not_found' => 'No Staff Members Found'
+  );
+  $staff_args = array(
+    'labels' => $staff_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 5,
+    'menu_icon' => 'dashicons-businessman',
+    'query_var' => 'staff',
+    'has_archive' => true,
+    'supports' => array(
+      'title',
+      'editor',
+      'custom_fields',
+      'thumbnail',
+      'revisions'
+    )
+  );
+  register_post_type('staff', $staff_args);
+
+  register_taxonomy('positions',
+    'staff',
+    array(
+      'hierarchical' => true,
+      'show_admin_column' => true,
+      'public' => true,
+      'labels' => array(
+        'name' => 'Positions',
+        'singular_name' => 'Position'
+      )
+    )
+  );
+}
+
+if(function_exists('acf_add_options_page')){
+  acf_add_options_page(array(
+    'page_title' => 'General Settings',
+    'menu_title' => 'General Settings',
+    'menu_slug' => 'general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
+  ));
+}
