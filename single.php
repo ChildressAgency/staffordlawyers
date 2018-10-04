@@ -1,13 +1,7 @@
 <?php get_header(); ?>
   <main id="main">
     <div class="container">
-      <?php 
-        if(get_field('page_intro_title') || get_field('page_intro')): ?>
-          <article class="brief">
-            <h2 class="underlined-header"><?php the_field('page_intro_title'); ?></h2>
-            <?php the_field('page_intro'); ?>
-          </article>
-      <?php endif; ?>
+      <?php get_template_part('partials/page-intro', 'block'); ?>
 
       <section id="intro-search">
         <?php get_search_form(); ?>
