@@ -365,6 +365,49 @@ function staffordlawyers_create_post_types(){
       )
     )
   );
+
+  $library_labels = array(
+    'name' => 'Library',
+    'singular_name' => 'Library',
+    'menu_name' => 'Library',
+    'add_new_item' => 'Add New Library Article',
+    'search_items' => 'Search Library',
+    'edit_item' => 'Edit Library Article',
+    'view_item' => 'View Library Article',
+    'all_items' => 'All Library Articles',
+    'new_item' => 'New Library Article',
+    'not_found' => 'No Library Articles Found'
+  );
+  $library_args = array(
+    'labels' => $library_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-book-alt',
+    'query_var' => 'library',
+    'has_archive' => true,
+    'support' => array(
+      'title',
+      'editor',
+      'custom_fields',
+      'thumbnail',
+      'revisions'
+    )
+  );
+  register_post_type('library', $library_args);
+
+  register_taxonomy('article_category',
+    'library',
+    array(
+      'hierarchical' => true,
+      'show_admin_column' => true,
+      'public' => true,
+      'labels' => array(
+        'name' => 'Article Categories',
+        'singular_name' => 'Article Category'
+      )
+    )
+  );
 }
 
 if(function_exists('acf_add_options_page')){
