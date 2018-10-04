@@ -386,7 +386,7 @@ function staffordlawyers_create_post_types(){
     'menu_icon' => 'dashicons-book-alt',
     'query_var' => 'library',
     'has_archive' => true,
-    'support' => array(
+    'supports' => array(
       'title',
       'editor',
       'custom_fields',
@@ -405,6 +405,49 @@ function staffordlawyers_create_post_types(){
       'labels' => array(
         'name' => 'Article Categories',
         'singular_name' => 'Article Category'
+      )
+    )
+  );
+
+  $practice_areas_labels = array(
+    'name' => 'Practice Areas',
+    'singular_name' => 'Practice Area',
+    'menu_name' => 'Practice Areas',
+    'add_new_item' => 'Add New Practice Area',
+    'search_items' => 'Search Practice Areas',
+    'edit_item' => 'Edit Practice Area',
+    'view_item' => 'View Practice Area',
+    'all_items' => 'All Practice Areas',
+    'new_item' => 'New Practice Area',
+    'not_found' => 'Practice Area Not Found'
+  );
+  $practice_areas_args = array(
+    'labels' => $practice_areas_labels,
+    'capability_type' => 'post',
+    'public' => true,
+    'menu_position' => 7,
+    'menu_icon' => 'dashicons-heart',
+    'query_var' => 'practice_areas',
+    'has_archive' => true,
+    'supports' => array(
+      'title',
+      'editor',
+      'custom_fields',
+      'thumbnail',
+      'revisions'
+    )
+  );
+  register_post_type('practice_areas', $practice_areas_args);
+
+  register_taxonomy('library_article_types',
+    'practice_ares',
+    array(
+      'hierarchical',
+      'show_admin_column' => true,
+      'public' => true,
+      'labels' => array(
+        'name' => 'Library Article Types',
+        'singular_name' => 'Library Article'
       )
     )
   );
