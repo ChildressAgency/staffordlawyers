@@ -69,9 +69,9 @@ function staffordlawyers_styles(){
 add_filter('style_loader_tag', 'staffordlawyers_add_css_meta', 10, 2);
 function staffordlawyers_add_css_meta($link, $handle){
   if($handle == 'fontawesome'){
-    $new_link = str_replace('/>', ' integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous "', $link);
+    $link = str_replace('/>', ' integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous "', $link);
   }
-  return $new_link;
+  return $link;
 }
 
 add_theme_support('post-thumbnails');
