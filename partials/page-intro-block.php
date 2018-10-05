@@ -2,6 +2,9 @@
 if(is_home()){
   $intro_page = get_page_by_path('blog');
 }
+else if(is_archive()){
+  $intro_page = get_page_by_path('blog');
+}
 else if(is_single('practice_areas')){
   $intro_page = get_page_by_path('practice-areas');
 }
