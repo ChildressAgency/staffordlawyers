@@ -13,7 +13,7 @@
           <?php endif; ?>
         </div>
         <div class="col-sm-5">
-          <?php echo do_shortcode('[schedule-consultation-contact-form]'); ?>
+          <?php echo do_shortcode('[contact-form-7 id="58" title="Consultation Form"]'); ?>
         </div>
       </div>
       <div class="row">
