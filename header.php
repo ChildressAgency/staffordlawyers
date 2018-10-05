@@ -103,7 +103,7 @@
                 }
 
                 if($slide['slide_link']){
-                  echo '<a href="' . $slide['slide_link']['url'] . '" class="btn-main btn-transparent" target="' . $slide['slide_link']['target'] . '">' $slide['slide_link']['title'] . '</a>';
+                  echo '<a href="' . $slide['slide_link']['url'] . '" class="btn-main btn-transparent" target="' . $slide['slide_link']['target'] . '">' . $slide['slide_link']['title'] . '</a>';
                 }
               ?>
             </div>
