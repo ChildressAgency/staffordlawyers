@@ -1,6 +1,7 @@
 <?php get_header(); ?>
   <main id="main">
     <div class="container">
+      <?php get_template_part('partials/page-intro', 'block'); ?>
       <h2>Blog Posts</h2>
       <?php
         if(have_posts()){
