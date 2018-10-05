@@ -1,8 +1,5 @@
 <?php 
-if(is_home()){
-  $intro_page = get_page_by_path('blog');
-}
-else if(is_archive()){
+if(is_home() || is_archive()){
   $intro_page = get_page_by_path('blog');
 }
 else if(is_single('practice_areas')){

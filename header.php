@@ -127,7 +127,22 @@
   ?>
   <div class="hero" style="background-image:url(<?php echo $hero_image; ?>); <?php echo $hero_image_css; ?>">
     <?php 
-      if(get_field('hero_title')){
+      if(is_single('library')){
+        $library_main_page = get_page_by_path('library');
+        $library_page_id = $library_main_page->ID;
+        echo '<h1 class="hero-caption">' . get_field('hero_title', $library_page_id) . '</h1>';
+      }
+      else if(is_single('practice_areas')){
+        $practice_main_page = get_page_by_path('practice-areas');
+        $practice_page_id = $practice_main_page->ID;
+        echo '<h1 class="hero-caption">' . get_field('hero_title', $practice_page_id);
+      }
+      else if(is_home() || is_archive()){
+        $blog_main_page = get_page_by_path('blog');
+        $blog_page_id = $blog_main_page->ID;
+        echo '<h1 class="hero-caption">' .get_field('hero_title', $blog_page_id);
+      }
+      else if(get_field('hero_title')){
         echo '<h1 class="hero-caption">' . get_field('hero_title') . '</h1>';
       }
       else{
