@@ -78,7 +78,7 @@
 
   <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
     <ol class="carousel-indicators">
-      <?php for($i = 0; $i <= count($hero_carousel); $i++): ?>
+      <?php for($i = 0; $i < count($hero_carousel); $i++): ?>
         <li data-target="#hero-carousel" data-slide-to="<?php echo $i; ?>"<?php if($i == 0){ echo ' class="active"'; } ?>></li>
       <?php endfor; ?>
     </ol>
@@ -127,17 +127,22 @@
   ?>
   <div class="hero" style="background-image:url(<?php echo $hero_image; ?>); <?php echo $hero_image_css; ?>">
     <?php 
-      if(is_single('library')){
+      if(is_singular('library') || is_post_type_archive('library')){
         $library_main_page = get_page_by_path('library');
         $library_page_id = $library_main_page->ID;
         echo '<h1 class="hero-caption">' . get_field('hero_title', $library_page_id) . '</h1>';
       }
-      else if(is_single('practice_areas')){
+      else if(is_singular('practice_areas') || is_post_type_archive('practice_areas')){
         $practice_main_page = get_page_by_path('practice-areas');
         $practice_page_id = $practice_main_page->ID;
         echo '<h1 class="hero-caption">' . get_field('hero_title', $practice_page_id);
       }
-      else if(is_home() || is_archive()){
+      else if(is_singular('staff') || is_post_type_archive('staff')){
+        $staff_main_page = get_page_by_path('attorneys-staff');
+        $staff_page_id = $staff_main_page->ID;
+        echo '<h1 class="hero-caption">' . get_field('hero_title', $staff_page_id) . '</h1>';
+      }
+      else if(is_home() || is_archive() && !is_post_type_archive()){
         $blog_main_page = get_page_by_path('blog');
         $blog_page_id = $blog_main_page->ID;
         echo '<h1 class="hero-caption">' .get_field('hero_title', $blog_page_id);
@@ -146,7 +151,7 @@
         echo '<h1 class="hero-caption">' . get_field('hero_title') . '</h1>';
       }
       else{
-        echo get_the_title(); 
+        echo '<h1 class="hero-caption">' . get_the_title() . '</h1>';
       }
     ?>
     <div class="hero-overlay"></div>
