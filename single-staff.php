@@ -16,22 +16,18 @@
             ?>
             <table class="attorney-contact-info">
               <tbody>
-                <?php if(get_field('staff_address1') || get_field('staff_city_state_zip')): ?>
                   <tr>
                     <th scope="row">Address:</th>
                     <td><?php 
-                      echo get_field('staff_address1') ? get_field('staff_address1') . '<br />' : '';
-                      echo get_field('staff_address2') ? get_field('staff_address2') . '<br />' : '';
-                      echo get_field('staff_city_state_zip') ? get_field('staff_city_state_zip') : ''; ?>
+                      echo get_field('staff_address1') ? get_field('staff_address1') : get_field('address1', 'option') .'<br />';
+                      echo get_field('staff_address2') ? get_field('staff_address2') : get_field('address2', 'option') . '<br />';
+                      echo get_field('staff_city_state_zip') ? get_field('staff_city_state_zip') : get_field('city_state_zip', 'option'); ?>
                     </td>
                   </tr>
-                <?php endif; ?>
-                <?php if(get_field('staff_phone')): ?>
                   <tr>
                     <th scope="row">Phone:</th>
-                    <td><?php the_field('staff_phone'); ?></td>
+                    <td><?php echo get_field('staff_phone') ? get_field('staff_phone') : get_field('phone', 'option'); ?></td>
                   </tr>
-                <?php endif; ?>
                 <?php if(get_field('staff_email')): ?>
                   <tr>
                     <th scope="row">Email:</th>
@@ -45,6 +41,7 @@
             <?php if(have_rows('staff_profile_fields')): while(have_rows('staff_profile_fields')): the_row(); ?>
               <h3><?php the_sub_field('profile_field_title'); ?></h3>
               <?php the_sub_field('profile_field_content'); ?>
+            <?php endwhile; endif; ?>
           </div>
         </div>
       </article>
@@ -52,7 +49,7 @@
   </main>
 
   <?php if(have_rows('staff_member_testimonials')): ?>
-    <section id="client-reviews" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?> '/images/columns.jpg); background-position:left center;">
+    <section id="client-reviews" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/columns.jpg); background-position:left center;">
       <div class="container">
         <h2>Client Reviews</h2>
         <?php while(have_rows('staff_member_testimonials')): the_row(); ?>
@@ -64,6 +61,7 @@
       </div>
     </section>
   <?php endif; ?>
+
 <?php endwhile; else: ?>
   <p>Sorry, this staff member does not have a profile setup yet.</p>
 <?php endif; ?>
