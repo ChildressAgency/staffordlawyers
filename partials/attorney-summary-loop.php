@@ -14,18 +14,14 @@
       <div class="col-sm-6">
         <div class="attorney-summary">
           <h3><?php the_title(); ?></h3>
-          <?php if(get_field('staff_address1') || get_field('staff_city_state_zip')): ?>
             <p>
               <?php 
-                echo get_field('staff_address1') ? get_field('staff_address1') . '<br />' : ''; 
-                echo get_field('staff_address2') ? get_field('staff_address2') . '<br />' : '';
-                echo get_field('staff_city_state_zip') ? get_field('staff_city_state_zip') : '';
+                echo get_field('staff_address1') ? get_field('staff_address1') : get_field('address1', 'option') . '<br />'; 
+                echo get_field('staff_address2') ? get_field('staff_address2') : get_field('address2', 'option') . '<br />';
+                echo get_field('staff_city_state_zip') ? get_field('staff_city_state_zip') : get_field('city_state_zip', 'option');
               ?>
             </p>
-          <?php endif; ?>
-          <?php if(get_field('staff_phone')): ?>
-            <p><?php the_field('staff_phone'); ?></p>
-          <?php endif; ?>
+          <p><?php echo get_field('staff_phone') ? get_field('staff_phone') : get_field('phone', 'option'); ?></p>
           <?php if(get_field('staff_email')): ?>
             <p><a href="mailto:<?php the_field('staff_email'); ?>"><?php the_field('staff_email'); ?></a></p>
           <?php endif; ?>
