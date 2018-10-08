@@ -9,7 +9,7 @@ else if(is_single('library')){
   $intro_page = get_page_by_path('library');
 }
 
-if($intro_page){
+if(isset($intro_page) && $intro_page !== ''){
   $intro_page_id = $intro_page->ID;
 }
 else{
@@ -18,7 +18,7 @@ else{
 
 if(get_field('page_intro_title', $intro_page_id) || get_field('page_intro', $intro_page_id)): ?>
   <article class="brief">
-    <h2 class="underline-header"><?php the_field('page_intro_title', $intro_page_id); ?></h2>
+    <h2 class="underlined-header"><?php the_field('page_intro_title', $intro_page_id); ?></h2>
     <?php the_field('page_intro', $intro_page_id); ?>
   </article>
 <?php endif; ?>
