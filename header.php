@@ -77,11 +77,13 @@
   <?php $hero_carousel = get_field('hero_carousel'); ?>
 
   <div id="hero-carousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
-    <ol class="carousel-indicators">
-      <?php for($i = 0; $i < count($hero_carousel); $i++): ?>
-        <li data-target="#hero-carousel" data-slide-to="<?php echo $i; ?>"<?php if($i == 0){ echo ' class="active"'; } ?>></li>
-      <?php endfor; ?>
-    </ol>
+    <?php if(count($hero_carousel) > 1): ?>
+      <ol class="carousel-indicators">
+        <?php for($i = 0; $i < count($hero_carousel); $i++): ?>
+          <li data-target="#hero-carousel" data-slide-to="<?php echo $i; ?>"<?php if($i == 0){ echo ' class="active"'; } ?>></li>
+        <?php endfor; ?>
+      </ol>
+    <?php endif; ?>
 
     <div class="carousel-inner" role="listbox">
 
@@ -135,7 +137,7 @@
       else if(is_singular('practice_areas') || is_post_type_archive('practice_areas')){
         $practice_main_page = get_page_by_path('practice-areas');
         $practice_page_id = $practice_main_page->ID;
-        echo '<h1 class="hero-caption">' . get_field('hero_title', $practice_page_id);
+        echo '<h1 class="hero-caption">' . get_field('hero_title', $practice_page_id) . '</h1>';
       }
       else if(is_singular('staff') || is_post_type_archive('staff')){
         $staff_main_page = get_page_by_path('attorneys-staff');
@@ -145,7 +147,7 @@
       else if(is_home() || is_archive() && !is_post_type_archive()){
         $blog_main_page = get_page_by_path('blog');
         $blog_page_id = $blog_main_page->ID;
-        echo '<h1 class="hero-caption">' .get_field('hero_title', $blog_page_id);
+        echo '<h1 class="hero-caption">' .get_field('hero_title', $blog_page_id) . '</h1>';
       }
       else if(get_field('hero_title')){
         echo '<h1 class="hero-caption">' . get_field('hero_title') . '</h1>';

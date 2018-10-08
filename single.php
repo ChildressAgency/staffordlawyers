@@ -8,9 +8,11 @@
       </section>
 
       <?php
+        $requested_post = get_queried_object();
         $most_recent_post = new WP_Query(array(
           'posts_per_page' => 1,
-          'post_status' => 'publish'
+          'post_status' => 'publish',
+          'p' => $requested_post->ID
         ));
         $skip_posts = [];
         if($most_recent_post->have_posts()): while($most_recent_post->have_posts()): $most_recent_post->the_post(); ?>
@@ -43,6 +45,7 @@
       <section id="previous-next-posts">
         <div class="row">
           <div class="col-sm-6">
+            <h4 class="text-center">Previous Post</h4>
             <?php 
               $adjacent_post = get_previous_post();
               if(!empty($adjacent_post)){
@@ -52,6 +55,7 @@
             ?>
           </div>
           <div class="col-sm-6">
+            <h4 class="text-center">Next Post</h4>
             <?php
               $adjacent_post = get_next_post();
               if(!empty($adjacent_post)){
