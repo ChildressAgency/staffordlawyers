@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row blog-post">
   <div class="col-sm-5">
     <?php the_post_thumbnail('full', array('class' => 'img-responsive center-block')); ?>
   </div>
