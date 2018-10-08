@@ -9,7 +9,7 @@
 
       <div class="panel-group" id="library" role="tablist" aria-multiselectable="true">
         <?php
-          $library_article_types = get_terms(array('taxonomy', => 'staff'));
+          $library_article_types = get_terms(array('taxonomy' => 'article_category'));
 
           if($library_article_types):
             foreach($library_article_types as $article_type):
@@ -17,7 +17,13 @@
                 'post_type' => 'library',
                 'posts_per_page' => -1,
                 'post_status' => 'publish',
-                'category_name' => $article_type->slug
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'article_category',
+                    'field' => 'slug',
+                    'terms' => $article_type->slug
+                  )
+                )
               ));
 
               if($articles->have_posts()): ?>
@@ -32,7 +38,7 @@
                   </div>
                   <div id="<?php echo $article_type->slug; ?>-library" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<?php echo $article_type->slug; ?>-heading">
                     <div class="panel-body<?php echo ($articles->post_count > 1) ? ' slider-panel' : ''; ?>">
-                      <?php while($articles->have_posts()): the_post(); ?>
+                      <?php while($articles->have_posts()): $articles->the_post(); ?>
                         <article class="blog-post">
                           <?php
                             if(has_post_thumbnail()){
