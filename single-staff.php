@@ -11,7 +11,7 @@
                 the_post_thumbnail('full', array('class' => 'img-responsive'));
               }
               else{
-                echo '<img src="' . get_stylesheet_directory_uri() . '/images/profile-placeholder.jpg" class="img-responsive" alt="' . get_the_title() . '" />';
+                echo '<img src="' . get_stylesheet_directory_uri() . '/images/image_coming_soon.png" class="img-responsive" alt="' . get_the_title() . '" />';
               }
             ?>
             <table class="attorney-contact-info">
