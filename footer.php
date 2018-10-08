@@ -26,7 +26,7 @@
           <p><?php the_field('company_name', 'option'); ?></p>
           <p><?php the_field('address_1', 'option'); ?><br /><?php the_field('address_2', 'option'); ?><br /><?php the_field('city_state_zip', 'option'); ?></p>
           <p><strong>Phone: </strong><?php the_field('phone', 'option'); ?><br /><strong>Fax: </strong><?php the_field('fax', 'option'); ?></p>
-          <p><a href="<?php the_field('disclaimer_link', 'option'); ?>">Click here</a> to view the disclaimer.</p>
+          <p><a href="<?php echo home_url('disclaimer'); ?>">Click here</a> to view the disclaimer.</p>
         </div>
         <div class="col-sm-4">
           <h3>Follow Us</h3>
