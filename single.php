@@ -32,7 +32,7 @@
                 <p>Share:</p>
                 <?php 
                   if(function_exists('ADDTOANY_SHARE_SAVE_KIT')){
-                    ADDTOANY_SHARE_SAVE_KIT(array('user_current_page', => true));
+                    ADDTOANY_SHARE_SAVE_KIT(array('user_current_page' => true));
                   }
                 ?>
               </div>
@@ -67,7 +67,7 @@
         $more_posts = new WP_Query(array(
           'posts_per_page' => 3,
           'post_status' => 'publish',
-          'post__not_in' => $skip_posts;
+          'post__not_in' => $skip_posts
         ));
         if($more_posts->have_posts()): ?>
           <section id="blog-posts">
