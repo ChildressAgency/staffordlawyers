@@ -69,7 +69,7 @@ function staffordlawyers_styles(){
 add_filter('style_loader_tag', 'staffordlawyers_add_css_meta', 10, 2);
 function staffordlawyers_add_css_meta($link, $handle){
   if($handle == 'fontawesome'){
-    $link = str_replace('/>', ' integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous "', $link);
+    $link = str_replace('/>', ' integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous " />', $link);
   }
   return $link;
 }
@@ -346,9 +346,10 @@ function staffordlawyers_create_post_types(){
     'supports' => array(
       'title',
       'editor',
-      'custom_fields',
+      'custom-fields',
       'thumbnail',
-      'revisions'
+      'revisions',
+      'excerpt'
     )
   );
   register_post_type('staff', $staff_args);
@@ -385,13 +386,15 @@ function staffordlawyers_create_post_types(){
     'menu_position' => 6,
     'menu_icon' => 'dashicons-book-alt',
     'query_var' => 'library',
-    'has_archive' => true,
+    //'has_archive' => true,
     'supports' => array(
       'title',
       'editor',
-      'custom_fields',
+      'custom-fields',
       'thumbnail',
-      'revisions'
+      'revisions',
+      'excerpt',
+      'author'
     )
   );
   register_post_type('library', $library_args);
@@ -432,9 +435,10 @@ function staffordlawyers_create_post_types(){
     'supports' => array(
       'title',
       'editor',
-      'custom_fields',
+      'custom-fields',
       'thumbnail',
-      'revisions'
+      'revisions',
+      'excerpt'
     )
   );
   register_post_type('practice_areas', $practice_areas_args);
