@@ -32,16 +32,19 @@ a{
   background-color:#398add;
   border-color:#398add;
 }
-.btn-main:hover{
+.btn-main:hover,
+.btn-main:focus{
   background-color:#398add;
   text-decoration:none;
   color:#fff;
 }
-.btn-main.btn-transparent:hover{
+.btn-main.btn-transparent:hover,
+.btn-main.btn-transparent:focus{
   background-color:#fff;
   color:#000;
 }
-.btn-main.btn-alt:hover{
+.btn-main.btn-alt:hover,
+.btn-main.btn-alt:focus{
   background-color:#335380;
 }
 
