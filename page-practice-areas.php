@@ -48,10 +48,7 @@
           </section>
       <?php endif; ?>
 
-
-      <section id="request-appointment">
-        <?php echo do_shortcode('[contact-form-7 id="58" title="Consultation Form"]'); ?>
-      </section>
+      <?php get_template_part('partials/consultation', 'form'); ?>
     </div>
   </main>
 <?php get_footer(); ?>
