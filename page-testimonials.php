@@ -6,7 +6,7 @@
   </main>
 
   <?php if(have_rows('testimonials')): ?>
-    <section id="client-reviews" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/up-columns.jpg); background-position:bottom center;">
+    <section id="client-reviews" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/up-columns.jpg); background-position:bottom center; background-size:contain;">
       <div class="container">
         <?php while(have_rows('testimonials')): the_row(); ?>
           <div class="client-review">
@@ -16,5 +16,5 @@
         <?php endwhile; ?>
       </div>
     </section>
-  <?php endwhile; endif; ?>
+  <?php endif; ?>
 <?php get_footer(); ?>
