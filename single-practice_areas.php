@@ -15,7 +15,7 @@
     </div>
   </main>
   <?php 
-    $practice_areas_page = get_page_by_path('practice_areas');
+    $practice_areas_page = get_page_by_path('practice-areas');
     $practice_areas_page_id = $practice_areas_page->ID;
     if(get_field('ready_to_contact_section_title', $practice_areas_page_id) || get_field('ready_to_contact_section', $practice_areas_page_id)): ?>
       <section id="ready-to-contact" style="background-image:url(<?php the_field('ready_to_contact_section_image', $practice_areas_page_id); ?>); <?php the_field('ready_to_contact_section_image_css', $practice_areas_page_id); ?>">
