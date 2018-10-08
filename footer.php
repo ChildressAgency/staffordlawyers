@@ -11,7 +11,7 @@
               'container_id' => 'footer-nav',
               'container_class' => '',
               'menu_class' => 'footer-menu list-unstyled',
-              'menu_id' => 
+              'menu_id' => '',
               'echo' => true,
               'fallback_cb' => 'staffordlawyers_footer_fallback_menu',
               'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
