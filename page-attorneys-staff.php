@@ -8,7 +8,13 @@
           'post_type' => 'staff',
           'posts_per_page' => -1,
           'post_status' => 'publish',
-          'category_name' => 'partners'
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'positions',
+              'field' => 'slug',
+              'terms' => 'partners'
+            )
+          )
         ));
         if($partners->have_posts()): ?>
           <section class="staff">
@@ -27,7 +33,13 @@
           'post_type' => 'staff',
           'posts_per_page' => -1,
           'post_status' => 'publish',
-          'category_name' => 'associates'
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'positions',
+              'field' => 'slug',
+              'terms' => 'associates'
+            )
+          )
         ));
         if($associates->have_posts()): ?>
           <section class="staff">
@@ -42,13 +54,13 @@
       <?php endif; wp_reset_postdata(); ?>
 
       <?php
-        $partners_term = get_term_by('slug', 'partners', 'staff');
-        $associates_term = get_term_by('slug', 'associates', 'staff');
-        $skip_staff_type[] = $partners_term->term_id;
-        $skip_staff_type[] = $associates_term->term_id;
+        $partners_term = get_term_by('slug', 'partners', 'positions');
+        $associates_term = get_term_by('slug', 'associates', 'positions');
+        $skip_staff_type[] = (int)$partners_term->term_id;
+        $skip_staff_type[] = (int)$associates_term->term_id;
 
         $other_staff_types = get_terms(array(
-          'taxonomy' => 'staff',
+          'taxonomy' => 'positions',
           'exclude' => $skip_staff_type
         ));
 
@@ -58,7 +70,13 @@
               'post_type' => 'staff',
               'posts_per_page' => -1,
               'post_status' => 'publish',
-              'category_name' => $staff_type->slug
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'positions',
+                  'field' => 'slug',
+                  'terms' => $staff_type->slug
+                )
+              )
             ));
 
             if($staff_type->have_posts()): ?>
