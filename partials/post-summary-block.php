@@ -16,7 +16,7 @@
     ?>
     <p>Posted on <?php echo $adjacent_post_date; ?> by <a href="<?php echo $adjacent_post_author_archive_link; ?>"><?php echo $adjacent_post_author_name; ?></a> in <?php echo $adjacent_post_cats_list; ?></p>
   </header>
-  <?php echo $adjacent_post->post_excerpt(); ?>
+  <?php echo $adjacent_post->post_excerpt; ?>
   <a href="<?php echo get_permalink($adjacent_post->ID); ?>" class="read-article">Read Article.</a>
   <footer class="post-footer">
     <?php 
