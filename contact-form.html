@@ -1,0 +1,82 @@
+<form>
+  <fieldset>
+    <div class="form-group">
+      <label for="your-name" class="control-label">Name*</label>
+      <div class="row">
+        <div class="col-sm-6">
+          [text* fname id:fname class:form-control ]
+          <span id="first-name" class="help-block">First</span>
+        </div>
+        <div class="col-sm-6">
+          [text* lname id:lname class:form-control]
+          <span id="last-name" class="help-block">Last</span>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label for="address" class="control-label">Address</label>
+      [text address1 id:address1 class:form-control]
+      <span id="address-1" class="help-block">Line 1</span>
+    </div>
+    <div class="form-group">
+      [text address2 id:address2 class:form-control]
+      <span id="address-2" class="help-block">Line 2</span>
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="city" class="control-label">City</label>
+        [text city id:city class:form-control]
+      </div>
+      <div class="col-sm-2">
+        <label for="state" class="control-label">State</label>
+        [text state id:state class:form-control]
+      </div>
+      <div class="col-sm-3">
+        <label for="zip" class="control-label">Zip</label>
+        [text zip id:zip class:form-control]
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="phone" class="control-label">Phone*</label>
+        [tel* phone id:phone class:form-control]
+      </div>
+      <div class="col-sm-4">
+        <label for="fax" class="control-label">Fax</label>
+        [tel fax id:fax class:form-control]
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="your-email" class="control-label">Email*</label>
+    [email* your-email id:your-email class:form-control]
+  </div>
+  <fieldset>
+    <div class="form-group">
+      <label for="type-of-case" class="control-label">What type fo case do you have? <span>(Optional)</span></label>
+      <div class="checkbox">
+        [checkbox type-of-case id:type-of-case use_label_element "Separation / Marital Settlement Agreement" "Child Support" "Spousal Support" "Divorce" "Military Divorce" "Equitable Distribution" "Child Custody / Visitation" "Domestic Violence / Allegation of Abuse"]
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <label for="disclaimer" class="control-label">Disclaimer*</label>
+    <div class="checkbox">
+      <label>
+        [acceptance disclaimer id:disclaimer]
+          I have read and agree to the disclaimer
+        [/acceptance]
+      </label>
+      <p><a href="//dev.childressagency.com/staffordlawyers/disclaimer" target="_blank">Click here</a> to view the disclaimer</p>
+    </div>
+  </div>
+  <div class="form-group">
+    [submit class:btn-main "Submit"]
+  </div>
+</form>
